@@ -1,67 +1,68 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel="stylesheet" type="text/css" href="style.css"/>
-	<link rel="shortcut icon" type="image/png" href="./images/icon.png">
+	<link rel='stylesheet' type='text/css' href='style.css' />
+	<link rel='shortcut icon' type='image/png' href='./images/icon.png' />
 	<title>Sorting Visualizer</title>
 </head>
 <body>
-	
-	<div id="toolbar">
-		<nav>
-			<ul>
-				<div id="genNewArrDiv">
-					<font id="genNewArr" onclick="generateRandomArr()">Generate New Random Array</font>
-				</div>
-				<div id="inputArrDiv">
-					<button onclick="document.getElementById('modal-wrapper').style.display='block'" style="width: 100%; height: 40px; border-radius: 2%">
-					Enter New Array</button>
+	<div id='toolbar'>
+		<div id='genNewArrDiv'>
+			<font id='genNewArr' onclick='generateRandomArr()'>Generate Random Array</font>
+		</div>
 
-					<div id="modal-wrapper" class="modal">
-					  
-					  <div class="modal-content animate">
-					        
-					    <div class="imgcontainer">
-					   		<span onclick="closeModal()" class="close" title="Close">&times;</span>
-					   		<img src="./images/array.jpg" alt="Array" >
-					    </div>
+		<div id='inputArrDiv'>
+			<button onclick="document.getElementById('modal-wrapper').style.display='block'">Enter New Array</button>
 
-					    <div class="container">
-					      <textarea placeholder="Enter Array in range 1-500 (space seperated)" id='textAreaArr'></textarea>
-					      <font id="invalidPrompt"> Invalid Array</font>  
-					      <button id="submitArr" onclick="getUserArr()">Submit</button>
-					    </div>
-					    
-					  </div>
-					  
+			<div id='modal-wrapper' class='modal'>
+				<div class='modal-content animate'>
+					<div id='imgcontainer'>
+						<span onclick='closeModal()' class='close' title='Close'>&times;</span>
+						<img src='./images/array.jpg' alt='Array'>
 					</div>
-				</div>
-				
-	            <li><font id="merge">Merge Sort</font></li>
-	            <li><font id="quick">Quick Sort</font></li>
-	            <li><font id="heap">Heap Sort</font></li>
-	            <li><font id="bubble">Bubble Sort</font></li>
-	            <li><font id="insertion">Insertion Sort</font></li>
-	            <li><font id="selection">Selection Sort</font></li>
+
+					<div class='modalContainer'>
+						<textarea placeholder='Enter Array in range 1-500 (space seperated)' id='textAreaArr'></textarea>
+					      <font id='invalidPrompt'> Invalid Array</font>  
+					      <button id='submitArr' onclick='getUserArr()'>Submit</button>
+					</div>
+				</div>					
+			</div>
+		</div>
+
+		<div id='sortMethods'>
+			<ul>
+				<li><font id='merge'>Merge Sort</font></li>
+	            <li><font id='quick'>Quick Sort</font></li>
+	            <li><font id='heap'>Heap Sort</font></li>
+	            <li><font id='bubble'>Bubble Sort</font></li>
+	            <li><font id='insertion'>Insertion Sort</font></li>
+	            <li><font id='selection'>Selection Sort</font></li>
 	        </ul>
-	    	<div id = "sizeSlider">
-				<font class="changeSize">Change Array Size &nbsp; &nbsp; &nbsp;</font>
-				<input autocomplete="off" id="sizeRangeSlider" type="range" min="5" max="220" value="100" oninput="getArrSize(this.value)" />
-			</div>
-			<div id="sortcontainer">
-				<button id="sortButton" onclick="sort()">Sort!</button> 
-			</div>
-			<div id = "speedSlider">
-				<font class="changeSize">Change Sorting Speed &nbsp; &nbsp; &nbsp;</font>
-				<input autocomplete="off" type="range"  min="1" max="6" value="3" step = "1" oninput="changeSortSpeed(this.value)" />
-			</div>
-	    </nav>
-	   
+	    </div>
+
+	   <div id = "sizeSlider">
+			<font class="changeSize">Change Array Size &nbsp; &nbsp; &nbsp;</font>
+			<input autocomplete="off" id="sizeRangeSlider" type="range" min="5" max="220" value="100" oninput="getArrSize(this.value)" />
+		</div>
+		<div id="sortcontainer">
+			<button id="sortButton" onclick="sort()">Sort!</button> 
+		</div>
+		<div id = "speedSlider">
+			<font class="changeSize">Change Sorting Speed &nbsp; &nbsp; &nbsp;</font>
+			<input autocomplete="off" type="range"  min="1" max="6" value="3" step = "1" oninput="changeSortSpeed(this.value)" />
+		</div>
 	</div>
 
-	<div id="bodycontainer"></div>
+	<div id='bodycontainer'></div>
 
-	
+
+
+
+
+
+
+
 
 	<script src="HomeScript.js"></script>
 	<script src="./algorithms/BubbleSort.js"></script>
