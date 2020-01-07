@@ -77,10 +77,14 @@ function changeSortSpeed(value)
 
 function changeWidth()
 {
-	arrMargin = Math.max(1, Math.min(Math.floor((0.2 * screen.width) / arr_size), 3));
-	arrWidth = Math.floor((0.2 - arrMargin/screen.width*arr_size + 0.4) * screen.width / arr_size);
-	leftMargin = (screen.width - Math.floor(arrWidth+arrMargin)*arr_size) / 2;
+	var screen_width = document.getElementById('bodycontainer').offsetWidth;
+	// arrMargin = Math.min(Math.ceil((0.2 * screen.width) / arr_size), 3);
+	// arrWidth = Math.floor((0.2 - arrMargin/screen.width*arr_size + 0.4) * screen.width / arr_size);
+	// leftMargin = Math.floor(screen.width - (arrWidth+arrMargin)*arr_size) / 2;
 
+	arrMargin = Math.min(Math.ceil(0.2*screen_width/arr_size), 3);
+	arrWidth = Math.floor((0.5*screen_width)/arr_size);
+	leftMargin = Math.floor(screen_width - (arrWidth+arrMargin)*arr_size) / 2.2;
 }
 
 function getArrSize(value)
