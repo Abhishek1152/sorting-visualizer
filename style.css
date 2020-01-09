@@ -214,6 +214,16 @@ li font:hover
     background-color: #6ec2ff;
 }
 
+#speedRangeSlider
+{
+    cursor: pointer;
+}
+
+#sizeRangeSlider
+{
+    cursor: pointer;
+}
+
 #speedSlider
 {
     position: fixed;

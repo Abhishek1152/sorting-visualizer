@@ -78,13 +78,9 @@ function changeSortSpeed(value)
 function changeWidth()
 {
 	var screen_width = document.getElementById('bodycontainer').offsetWidth;
-	// arrMargin = Math.min(Math.ceil((0.2 * screen.width) / arr_size), 3);
-	// arrWidth = Math.floor((0.2 - arrMargin/screen.width*arr_size + 0.4) * screen.width / arr_size);
-	// leftMargin = Math.floor(screen.width - (arrWidth+arrMargin)*arr_size) / 2;
-
 	arrMargin = Math.min(Math.ceil(0.2*screen_width/arr_size), 3);
 	arrWidth = Math.floor((0.5*screen_width)/arr_size);
-	leftMargin = Math.floor(screen_width - (arrWidth+arrMargin)*arr_size) / 2.2;
+	leftMargin = Math.floor(screen_width - (arrWidth+arrMargin)*arr_size) / 2;
 }
 
 function getArrSize(value)
@@ -128,9 +124,18 @@ function displayArr(arr)
 function toogleToolbar(val)
 {
 	isSorting = val;
+	var cursorType = "pointer";
+
+	if(val)
+		cursorType = "not-allowed";
+
 	document.getElementById("sortButton").disabled = val;
+	document.getElementById("sortButton").style.cursor = cursorType;
 	document.getElementById("submitArr").disabled = val;
+	document.getElementById("submitArr").style.cursor = cursorType;
 	document.getElementById("sizeRangeSlider").disabled = val;
+	document.getElementById("genNewArr").style.cursor = cursorType;
+	document.getElementById("sizeRangeSlider").style.cursor = cursorType;
 }
 
 
